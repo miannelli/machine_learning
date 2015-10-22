@@ -5,6 +5,7 @@ from numpy import inf
 from statistics import mean, stdev
 import tablemaker
 
+
 def trial(metric, K, N, distribution):
     point_cloud = point.PointCloud.generate(N, K, distribution)
     point_distances = (point.distances(point_cloud.points, metric) for point in point_cloud.points)
