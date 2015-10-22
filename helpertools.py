@@ -1,5 +1,6 @@
 from numpy.linalg import norm
 
+
 class RollingAverage:
 
     def __init__(self):
@@ -35,3 +36,18 @@ class Metric:
 
     def __str__(self):
         return str(self.ord)
+
+
+class Xi:
+    def __init__(self, distribution, sigma):
+        self.distribution = distribution
+        self.sigma = sigma
+
+    def __call__(self):
+        return self.distribution()
+
+    def __repr__(self):
+        return str(self.sigma)
+
+    def __str__(self):
+        return str(self.sigma)

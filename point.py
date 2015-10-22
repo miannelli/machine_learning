@@ -1,5 +1,7 @@
 from itertools import combinations
 import random
+from operator import itemgetter
+
 
 class Point:
     """ A Point Class """
@@ -20,8 +22,13 @@ class Point:
         return metric(d)
 
     def distances(self, points, metric):
-        distances = [self.distance_to(point, metric) for point in points if self != point]
+        distances = [self.distance_to(point, metric) for point in points if self is not point]
         return distances
+
+    def nearest_point(self, points, metric):
+        distances = self.distances(points, metric)
+        nearest_point_index = min(enumerate(distances), key=itemgetter(1))[0]
+        return points[nearest_point_index]
 
     def perturb(self, distribution):
         xi = distribution()
@@ -34,11 +41,11 @@ class Point:
     def __getitem__(self, item):
         return self.components[item]
 
-
+    def __repr__(self):
+        return "<{comps} - class: {cl}>".format(comps=str(self.components), cl=self.clazz)
 
 
 class PointCloud:
-
     def __init__(self, points):
         self.points = points
 
@@ -53,6 +60,9 @@ class PointCloud:
         self.points = [point.normalize(metric) for point in self.points]
         return self
 
+    def perturb_points(self, distribution):
+        return [point.perturb(distribution) for point in self.points]
+
     @classmethod
     def generate(cls, N, K, distribution):
         points = [Point([distribution() for i in range(N)]) for j in range(K)]
@@ -62,6 +72,12 @@ class PointCloud:
     def generate_with_classes(cls, N, K, distribution, classes):
         points = [Point([distribution() for i in range(N)], random.choice(classes)) for j in range(K)]
         return PointCloud(points)
+
+    def __len__(self):
+        return len(self.points)
+
+    def __getitem__(self, item):
+        return self.points[item]
 
 
 
