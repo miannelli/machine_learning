@@ -21,6 +21,7 @@ def distance(point1, point2, l=2):
 
 def distances(points, l=2):
     """ Given a list of points, return a list of all possible distances between two points"""
+    # This needs to be fixed
     distances = []
     while points:
         baseline = points.pop()
