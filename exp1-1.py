@@ -12,17 +12,36 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from scipy import spatial
+import argparse,sys
 
+#dimension of the space
+#n=5
+#the number of points sampled
 k=5
 
+#process command line arguments
+parser = argparse.ArgumentParser(description="ML Experiment 1")
+parser.add_argument('-k',metavar='<k>', help="k - The number of samples")
+#parse arguments, exit if password not specified
+args =	parser.parse_args()
 
+if(args.k):
+	try:
+		k=int(args.k)
+	except (ValueError) as e:
+		print(args.k,": Not an integer",file=sys.stderr)
+		sys.exit(-1)
+	
+#distribution to draw points from
 curr_dist = np.random.uniform
 
-# generate num_points points (vectors) of length dim with values provided by function dist
-def generatePoints(num_points, dim, dist, min, max):
+#generate num_points points (vectors) of length dim with values provided by function dist
+def generatePoints(num_points,dim,dist,min,max):
+	#create array of num_points of dimension dim
 	points = np.empty([num_points,dim])
 	for i in range(0,num_points):
 		for j in range(0,dim):
+			#create new point
 			points[i][j]=curr_dist(min,max)
 	return points
 
@@ -39,6 +58,7 @@ def calcDistance(point,other_points,metric):
 		if curr_max < dist:
 			curr_max=dist
 	return curr_min,curr_max
+	#return comp(map(lambda x: metric(x,point),other_points.tolist()))		
 	
 #creates a mask for slicing a numpy array which removes the element at omit_pos
 def ndslice(omit_pos,len):
