@@ -5,7 +5,7 @@ import tablemaker
 from copy import deepcopy
 from confusionmatrix import ConfusionMatrix
 
-trials = 10
+trials = 10 # Amount of trials
 N_Values = list(range(1, 11)) + list(range(20, 101, 10))  # The dimension of space
 K_Values = [k for k in range(10, 301, 10)]  # The number of point values
 metrics = [Metric(ord) for ord in [2]]  # Different norms to use
@@ -29,7 +29,7 @@ def trial(trial_number, metric, K, N, distribution, xi):
     print(result)
     return result
 
-
+# generate the table
 results = [trial(trial_number, metric, K, N, distribution, xi) for metric in metrics for N in N_Values for K in K_Values
            for xi in xis for trial_number in range(0, trials)]
 tablemaker.make_table('experiment1-2', ['Trial', 'Metric', 'K', 'N', 'sigma'] + ConfusionMatrix.headers(), results)

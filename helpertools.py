@@ -1,29 +1,10 @@
 from numpy.linalg import norm
 
 
-class RollingAverage:
-
-    def __init__(self):
-        self.average = 0.0
-        self.count = 0
-
-    def __iadd__(self, value):
-        self.average = ((self.average*self.count + value)/(self.count + 1))
-        self.count += 1
-        return self
-
-    def __call__(self):
-        if self.count:
-            return self.average
-        else:
-            raise ArithmeticError('Average undefined for empty empty array')
-
-    def __repr__(self):
-        return str(self.average)
-
-
 class Metric:
-
+    """
+    A metric class used to contain the metric function to be used and a label (for graphing purposes).
+    """
     def __init__(self, ord):
         self.norm = lambda vector: norm(vector, ord)
         self.ord = ord
@@ -39,6 +20,9 @@ class Metric:
 
 
 class Xi:
+    """
+    A Xi class used to contain the distribution function to be used and a label (for graphing purposes).
+    """
     def __init__(self, distribution, sigma):
         self.distribution = distribution
         self.sigma = sigma
