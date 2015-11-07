@@ -91,6 +91,7 @@ def bar_plot_data(headers,data,x,y,bar_group,plot_group,**kwargs):
 		#label bars
 		sp.legend([b[0] for b in bars],bar_group_by,loc=2)
 		sp.set_ylabel(headers[index_y])
+		sp.set_xlabel(headers[index_x])
 		plt.xlim(min(ind)-bar_width, max(ind)+bar_width*4)
 		sp.set_title(plot_group+"="+str(p_group))
 		sp.set_xticks(ind + bar_width*len(bar_group_by))
