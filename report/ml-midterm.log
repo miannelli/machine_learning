@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 NOV 2015 00:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 NOV 2015 23:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -279,15 +279,15 @@ File: l-experiment1-1-50-inf.png Graphic file (type png)
 <use l-experiment1-1-50-inf.png>
 Package pdftex.def Info: l-experiment1-1-50-inf.png used on input line 69.
 (pdftex.def)             Requested size: 155.24895pt x 116.43716pt.
-
-<l-experiment1-1-500-inf.png, id=18, 578.16pt x 433.62pt>
+ [2]
+<l-experiment1-1-500-inf.png, id=23, 578.16pt x 433.62pt>
 File: l-experiment1-1-500-inf.png Graphic file (type png)
 
 <use l-experiment1-1-500-inf.png>
 Package pdftex.def Info: l-experiment1-1-500-inf.png used on input line 78.
 (pdftex.def)             Requested size: 310.4979pt x 232.87433pt.
- [2] [3 <./l-experiment1-1-5-inf.png> <./l-experiment1-1-50-inf.png> <./l-exper
-iment1-1-500-inf.png>]
+ [3 <./l-experiment1-1-5-inf.png> <./l-experiment1-1-50-inf.png> <./l-experimen
+t1-1-500-inf.png>]
 <l-experiment2-5-inf.png, id=33, 578.16pt x 433.62pt>
 File: l-experiment2-5-inf.png Graphic file (type png)
 
@@ -309,7 +309,47 @@ File: l-experiment2-500-inf.png Graphic file (type png)
 Package pdftex.def Info: l-experiment2-500-inf.png used on input line 129.
 (pdftex.def)             Requested size: 310.4979pt x 232.87433pt.
  [4 <./l-experiment2-5-inf.png> <./l-experiment2-50-inf.png>] [5 <./l-experimen
-t2-500-inf.png>] (./ml-midterm.bbl
+t2-500-inf.png>]
+Overfull \hbox (21.45183pt too wide) in paragraph at lines 167--168
+[]$\OML/cmm/m/it/10 ^^[$ \OT1/cmr/m/n/10 - the stan-dard de-vi-a-tion of a nor-
+mal dis-tri-bu-tion, with $\OML/cmm/m/it/10 ^^[ \OMS/cmsy/m/n/10 2 f\OML/cmm/m/
+it/10 :\OT1/cmr/m/n/10 05\OML/cmm/m/it/10 ; :\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 
+; :\OT1/cmr/m/n/10 15\OML/cmm/m/it/10 ; :\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; :\
+OT1/cmr/m/n/10 25\OMS/cmsy/m/n/10 g$ 
+ []
+
+<l-experiment1-2-accuracy-n-k-300-s-005.png, id=45, 578.16pt x 433.62pt>
+File: l-experiment1-2-accuracy-n-k-300-s-005.png Graphic file (type png)
+
+<use l-experiment1-2-accuracy-n-k-300-s-005.png>
+Package pdftex.def Info: l-experiment1-2-accuracy-n-k-300-s-005.png used on inp
+ut line 178.
+(pdftex.def)             Requested size: 345.0pt x 258.74484pt.
+ [6]
+<l-experiment1-2-accuracy-k-n-10-s-005.png, id=49, 578.16pt x 433.62pt>
+File: l-experiment1-2-accuracy-k-n-10-s-005.png Graphic file (type png)
+
+<use l-experiment1-2-accuracy-k-n-10-s-005.png>
+Package pdftex.def Info: l-experiment1-2-accuracy-k-n-10-s-005.png used on inpu
+t line 207.
+(pdftex.def)             Requested size: 155.24895pt x 116.43716pt.
+
+<l-experiment1-2-accuracy-k-n-100-s-005.png, id=50, 578.16pt x 433.62pt>
+File: l-experiment1-2-accuracy-k-n-100-s-005.png Graphic file (type png)
+
+<use l-experiment1-2-accuracy-k-n-100-s-005.png>
+Package pdftex.def Info: l-experiment1-2-accuracy-k-n-100-s-005.png used on inp
+ut line 212.
+(pdftex.def)             Requested size: 155.24895pt x 116.43716pt.
+ [7 <./l-experiment1-2-accuracy-n-k-300-s-005.png>] <experiment1-2-sigmas.png, 
+id=56, 578.16pt x 433.62pt>
+File: experiment1-2-sigmas.png Graphic file (type png)
+
+<use experiment1-2-sigmas.png>
+Package pdftex.def Info: experiment1-2-sigmas.png used on input line 243.
+(pdftex.def)             Requested size: 345.0pt x 258.74484pt.
+ [8 <./l-experiment1-2-accuracy-k-n-10-s-005.png> <./l-experiment1-2-accuracy-k
+-n-100-s-005.png>] (./ml-midterm.bbl [9 <./experiment1-2-sigmas.png>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -319,23 +359,19 @@ Missing character: There is no ù in font cmr10!
 Missing character: There is no ‚ in font cmti10!
 Missing character: There is no Ä in font cmti10!
 Missing character: There is no ô in font cmti10!
-) [6]
-(./ml-midterm.aux)
+) [10] (./ml-midterm.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 3626 strings out of 493117
- 53868 string characters out of 6135433
- 115971 words of memory out of 5000000
- 7026 multiletter control sequences out of 15000+600000
+ 3655 strings out of 493117
+ 54866 string characters out of 6135433
+ 118045 words of memory out of 5000000
+ 7051 multiletter control sequences out of 15000+600000
  13871 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,9n,38p,787b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,38p,825b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -351,10 +387,10 @@ ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 4/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ml-midterm.pdf (6 pages, 291397 bytes).
+Output written on ml-midterm.pdf (10 pages, 404060 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 118 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
