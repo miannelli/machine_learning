@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{aggarwal2001surprising}
+Charu~C Aggarwal, Alexander Hinneburg, and Daniel~A Keim.
+\newblock {\em On the surprising behavior of distance metrics in high
+  dimensional space}.
+\newblock Springer, 2001.
+
+\bibitem{bellman1961adaptive}
+Richard Bellman.
+\newblock {\em Adaptive control processes: a guided tour}, volume~4.
+\newblock Princeton university press Princeton, 1961.
+
+\bibitem{beyer1999nearest}
+Kevin Beyer, Jonathan Goldstein, Raghu Ramakrishnan, and Uri Shaft.
+\newblock When is “nearest neighbor” meaningful?
+\newblock In {\em Database Theory - ICDT’99}, pages 217--235. Springer, 1999.
+
+\bibitem{simlinf}
+Kristy Sim and Richard Hartley.
+\newblock Removing outliers using the $\mathcal{L}_{\infty}$ norm.
+\newblock In {\em Proceedings of the 2006 IEEE Computer Society Conference on
+  Computer Vision and Pattern Recognition - Volume 1}, CVPR '06, pages
+  485--494, Washington, DC, USA, 2006. IEEE Computer Society.
+
+\end{thebibliography}
