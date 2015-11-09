@@ -43,7 +43,14 @@ not sure if that's useful here
 
 \
 
-The ``curse of dimensionality" coined by Richard Bellman in 1961\cite{bellman1961adaptive}, comes in many forms, including Bellman's original context of optimization, functional approximation, and combinatorics. In this era of ``big data", ``big" not only refers to the indefatigable increase the amount of data collected, but also in the number of features and components that are utilized in the data analysis. However,  as shown in\cite{aggarwal2001surprising}, the increase in the number of features considered, which are usually considered as a multi-dimensional space, has grave repercussions for machine learning techniques that rely on some measure of distance between points in the feature space. Moreover, in 
+The ``curse of dimensionality" coined by Richard Bellman in 1961\cite{bellman1961adaptive}, comes in many forms, including Bellman's original context of optimization, functional approximation, and combinatorics. In this era of ``big data", ``big" not only refers to the indefatigable increase the amount of data collected, but also in the number of features and components that are utilized in the data analysis.  
+
+It is common in the area of genomics and computational biology for a problem to have more features than observations.  Such is the case in gene expression arrays where where a data set can have thousands of genes, yet less than a hundred samples \cite{hastie01statisticallearning}.  Other examples of high dimensional data can be found in recommender systems, such as those found at Amazon or Netflix where customers may have rated up to thousands of products.  In 2006, Netflix released an anonymized data set consisting of the ratings of a half-million customers on nearly 18,000 movies\cite{Bennett:2007:KCW:1345448.1345459}.
+
+The explosion of features in modern big data is not without its challenges.  As shown in\cite{aggarwal2001surprising}, the increase in the number of features considered, which are usually considered as a multi-dimensional space, has grave repercussions for machine learning techniques that rely on some measure of distance between points in the feature space. Moreover, in 
+
+
+
 \section{Properties of High Dimensional Spaces}
 I'm not sure what we should put here. The only reference we have for this part are Haralick's slides.
 
@@ -164,8 +171,21 @@ In this set of experiments, each of the $N$ components of the $K$ points were dr
 As with the uniform distribution, the trend in the performance of the various norms is smoothed as $K$ increases. Also in common with the previous experiment, the $\mathcal{L}_1$ performs better than the $\mathcal{L}_2$ norm. However, it is the $\mathcal{L}_{\infty}$ norm which performs best as $N$ increases.
 \
 
-In order to isolate the difference in performance, we first repeated the experiment but varying the normalization. While normalizing using a different norm did change the specific means, it did not change the overall performance. Nor did repeating the experiment without normalization. We then turned our attention to how the $\mathcal{L}_{\infty}$ norm affects points drawn from a uniform or normal distribution differently.
+In order to isolate the difference in performance, we first repeated the experiment but varying the normalization. While normalizing using a different norm did change the specific means, it did not change the overall performance or pattern as shown in \ref{fig:exp1-2-accuracy-n}. Nor did repeating the experiment without normalization as shown in \ref{no_normalization}. We then turned our attention to how the $\mathcal{L}_{\infty}$ norm affects points drawn from a uniform or normal distribution differently.
 \
+\begin{figure}[H]
+\centering
+        \includegraphics[width=\textwidth]{normalization_metrics.png}
+        \caption{Average distance ratio r for each combination of normalization metric (rows) and distance metric (columns) varying over dimension of space N}
+        \label{fig:normmetrics}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+        \includegraphics[width=\textwidth]{exp2without_normalization.jpg}
+        \caption{Average distance ratio for metrics $L_1,L_2,$ and $L_{\infty}$, non-normalized points whose components are drawn from a normal distribution with mean 0 and variance 1.}
+        \label{fig:no_normalization}
+\end{figure}
 
 For a vector whose components are drawn from a uniform distribution on $(0, 1)$, the $\mathcal{L}_{\infty}$ is bounded by 1, whereas a vector whose components are drawn from a normal distribution arern't bounded, even when the vector is normalized.
 
@@ -257,7 +277,7 @@ $K$&\multicolumn{2}{|c|}{Confusion Matrix}&Accuracy\\
 \end{tabular}
 \caption{Confusion Matrices for Figure \ref{fig:exp1-2-accuracy-k}}\label{fig:cm-exp1-2-accuracy-k}
 \end{figure}
-Our experiments showed a negative relationship between accuracy and sample size, which weakened as $N$ increased. In Figure \ref{fig:exp2k1} for $N=10$ we see a drop by .10 in the accuracy over the range of $K$, whereas in figure {fig:exp2k2} for $N=100$ the same range in sample size exhibits only half that reduction in accuracy.
+Our experiments showed a negative relationship between accuracy and sample size, which weakened as $N$ increased. In Figure \ref{fig:exp2k1} for $N=10$ we see a drop by .10 in the accuracy over the range of $K$, whereas in figure \ref{fig:exp2k2} for $N=100$ the same range in sample size exhibits only half that reduction in accuracy.
 \subsubsection{The Effect of Perturbation Variance on Accuracy}
 \begin{figure}[H]
     \centering
@@ -274,10 +294,13 @@ In order to discern the effect of the number of classes on accuracy, we performe
 \end{figure}
 In the left half of Figure \ref{fig:exp1-2-varclass}, we see that the positive correlation between accuracy and dimension is preserved from the binary classification experiments, albeit with lower overall accuracy. This trend is demonstrated in the left half of the figure. The data suggest that the relatively high accuracy in the original binary classification is due to the proximity of points in high dimensional space, coupled with a paucity of classification choices.
 \section{Conclusion}
-In conclusion, we have demonstrated that the geometry of high dimensional space greatly impacts the performance of machine learning techniques like near neighbors, that rely upon spatial proximity for their results. The distance between points becomes a poor discriminant in these spaces. We have seen that both the distribution of points as well as the metric used must be considered. We have seen that classification accuracy is effected by the dimension of the space as well as the number of classes used in assignment.
+In conclusion, we have demonstrated that the geometry of high dimensional space greatly impacts the performance of machine learning techniques like nearest neighbor, that rely upon spatial proximity for their results. The distance between points becomes a poor discriminant in these spaces. We have seen that both the distribution of points as well as the metric used must be considered. We have seen that classification accuracy is effected by the dimension of the space as well as the number of classes used in assignment.
 \
 
-Future experiments may investi
+Future experiments may investigate the performance of additional metrics, such as fractional distance metrics, to see if the trend continues and the performance of the $\mathcal{L}_k$ norm on a uniformly distributed data set increases as k decreases.
+
+In addition to normal and uniform distributions, the performance of the distance metrics can be tested on data sets consisting of varying distributions such as multi-modal or correlated data.
+
 -suggest other experiments (fractional distance metric, other clustering, other ML techniques which use distance?
 	
 \bibliographystyle{plain}
