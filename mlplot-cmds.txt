@@ -2,6 +2,8 @@ mlplot.aggr_bar_plot_file('l-experiment1-1','N','Mean','Metric',['K'],[5],error=
 mlplot.aggr_bar_plot_file('l-experiment1-1','N','Mean','Metric',['K'],[50],error='StandardDeviation',save=True)
 mlplot.aggr_bar_plot_file('l-experiment1-1','N','Mean','Metric',['K'],[500],error='StandardDeviation',save=True)
 
+mlplot.aggr_bar_plot_file('experiment1-1-10-20','N','Mean','Metric',['K'],[500],error='StandardDeviation',save=True)
+
 mlplot.aggr_scatter_plot_file('l-experiment1-2','K','Accuracy',['N','sigma'],[2,0.05],linreg=True,save=True)
 mlplot.aggr_scatter_plot_file('l-experiment1-2','K','Accuracy',['N','sigma'],[10,0.05],linreg=True,save=True)
 mlplot.aggr_scatter_plot_file('l-experiment1-2','K','Accuracy',['N','sigma'],[100,0.05],linreg=True,save=True)

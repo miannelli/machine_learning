@@ -384,7 +384,7 @@ def aggr_bar_plot_data(headers,data,x,y,bar_group,group_by_headers,group_by_vals
 	plt.plot()
 	
 	if save:
-		filename = "plots/" + name + "-" + str(b_group) + "-"+ grouped_title+".png"
+		filename = "plots/" + name + "-"+ grouped_title+".png"
 		plt.savefig(filename)
 	else:
 			plt.show()

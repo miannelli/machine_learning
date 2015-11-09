@@ -158,13 +158,94 @@ $\infty$ & 100 & 0.48610 & N/A\\
 In Figure \ref{fig:exp2data}, we see a comparison of the average distance ratios for each metric on the $K=500$ data set. At $N=1$, $r=0$ for all metrics. At $N=100$, $r$ varies between $7/10$ and roughly $1/2$, with a $50\%$ difference between $L_2$ and $L_{\infty}$.
 
 \subsection{Classification Accuracy}
--setup\\
--synthetic data set\\
--tests that were run\\
--results (conf matrix) as N is varied\\
--results (conf matrix) as K is varied\\
--results (conf matrix) as $\sigma$ is varied
--how different metrics affect these results
+\paragraph{}
+In \cite{aggarwal2001surprising}, the impact of different norms on classification accuracy was investigated, where it was demonstrated that, with respect to a random classification, lower valued norms performed better. In this section, we investigate how classification accuracy varies with respect to dimension, sample size, and and data variance. The parameters used in these experiments are:
+\begin{itemize}
+\item $N$ - the dimension of the space, taking values from $[1,10)\cup[10,20,\ldots,100]$
+\item $K$ - the samples space, taking values in $\{10,300\}$ in increments of 10
+\item $M$ - the number of points in the data set to be classified
+\item $\sigma$ - the standard deviation of a normal distribution, with $\sigma\in\{.05,.1,.15,.2,.25\}$
+\end{itemize}
+\paragraph{}
+For each experiment, a labeled set $X$ of $K$ $N$-dimensional sample points was generated, with the component of each point being drawn from a uniform distribution on $(0,1)$, and each point being assigned a random, binary classification (i.e., 0 or 1). Then, a data set $Y$ of $M$ $N$-dimensional points is generated with components drawn  from a uniform distribution on $(0,1)$. Each point in $Y$ is given the classification by it nearest neighbor in $X$. The new dataset $\tilde{Y}$ is created by taking each point in $Y$ and perturbing each of its components by adding a value drawn from a normal distribution with mean $0$ and variance $\sigma$. The dataset $\tilde{Y}$ is then classified in the same way as $Y$, and the confusion matrix of between $Y$ and $\tilde{Y}$ is then generated.
+For each combination of $N$, $K$, and $\sigma$ values, ten trials of the above experiment were performed. The results of the trials were then averaged. The standard Euclidean norm ($\mathcal{L}_2$) was used in all experiments throughout this section. Note that we also used a different measure of accuracy than in \cite{aggarwal2001surprising}. Accuracy in this section is defined as:
+$$
+	\dfrac{\#\textrm{true positives}+\#\textrm{true negatives}}{\#\textrm{total outcomes}}
+$$
+\subsubsection{The Effect of Dimension on Accuracy}
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\textwidth]{l-experiment1-2-accuracy-n-k-300-s-005.png}
+    \caption{Accuracy as $N$ Varies, $K=300$, $\sigma=.05$}\label{fig:exp1-2-accuracy-n}
+\end{figure}
+\begin{figure}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+$N$&\multicolumn{2}{|c|}{Confusion Matrix}&Accuracy\\
+\hline
+1&27.9&24.7&0.504\\
+\cline{2-3}
+&24.9&22.5&\\
+\hline
+10&35.8&13.9&	0.689\\
+\cline{2-3}
+&17.2&33.1&\\
+\hline
+100&35&14.1&0.707\\
+\cline{2-3}
+&15.2&35.7&\\
+\hline
+\end{tabular}
+\caption{Confusion Matrices for Figure \ref{fig:exp1-2-accuracy-n}}\label{fig:cm-exp1-2-accuracy-n}
+\end{figure}
+Our experiments showed a positive relationship between accuracy and dimension. From the results depicted in Figures \ref{fig:exp1-2-accuracy-n} and \ref{fig:cm-exp1-2-accuracy-n}, we see that accuracy starts at approximately 50\%, climbs rapidly to approximately 70\%, the remains at that level as the number of dimensions increases. Lower samples size and higher variance increased the amount of noise in the data but did not produce contradicting results.
+\subsubsection{The Effect of Sample Size on Accuracy}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[h]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{l-experiment1-2-accuracy-k-n-10-s-005.png}
+        \caption{$N=10$}
+        \label{fig:exp2k1}
+    \end{subfigure}
+   \begin{subfigure}[h]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{l-experiment1-2-accuracy-k-n-100-s-005.png}
+        \caption{$N=100$}
+        \label{fig:exp2k2}
+    \end{subfigure}
+    \caption{Accuracy as $K$ Varies, $N$ as labeled, $\sigma=.05$}\label{fig:exp1-2-accuracy-k}
+\end{figure}
+\begin{figure}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+$K$&\multicolumn{2}{|c|}{Confusion Matrix}&Accuracy\\
+\hline
+10&47.3&12.9&0.777\\
+\cline{2-3}
+&9.4&30.4&\\
+\hline
+100&32.8&15.6&0.716\\
+\cline{2-3}
+&12.8&38.8&\\
+\hline
+300&35&14.1&0.707\\
+\cline{2-3}
+&15.2&35.7&\\
+\hline
+\end{tabular}
+\caption{Confusion Matrices for Figure \ref{fig:exp1-2-accuracy-k}}\label{fig:cm-exp1-2-accuracy-k}
+\end{figure}
+Our experiments showed a negative relationship between accuracy and sample size, which weakened as $N$ increased. In Figure \ref{fig:exp2k1} for $N=10$ we see a drop by .10 in the accuracy over the range of $K$, whereas in figure {fig:exp2k2} for $N=100$ the same range in sample size exhibits only half that reduction in accuracy.
+\subsubsection{The Effect of Perturbation Variance on Accuracy}
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\textwidth]{experiment1-2-sigmas.png}
+    \caption{Accuracy as $\sigma$ Varies, $N=100$,$K=300$}\label{fig:exp1-2-accuracy-s}
+\end{figure}
+Our initial range of $\sigma$  did not reveal any significant correlation with accuracy, so the range of $\sigma$ was expanded from .05  to .95 inclusively in .05 increments, keeping $N$ and $K$ constant at 100 and 300 respectively. As before, 10 trials were run for each $\sigma$ value, and the results for each were averaged. Even in this expanded range, the accuracy oscillated as $\sigma$ increased, staying with a range of .56 to .60.
+\subsubsection{On the Number of Classes and Accuracy}
+
 \section{Conclusion}
 -summarize results\\
 -suggest other experiments (fractional distance metric, other clustering, other ML techniques which use distance?
