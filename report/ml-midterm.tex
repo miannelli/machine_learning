@@ -29,7 +29,7 @@ City University of New York\\
 \maketitle
 
 \begin{abstract}
-In the age of big data, the analysis of feature in many real-world applications requires the use of high dimensional spaces. Many machine learning techniques, including similarity indexing, density estimation, and nearest neighbors, use the proximity of points in $N$-dimensional as the primary means of classification. However, the geometry of high dimensional spaces and the metrics used to measure distance reduces the efficacy of these techniques. Building upon the work of Beyer, Aggarwal, Haralick, and others, we provide experimental results concerning the performance of $\mathcal{L}_k$-based metrics with respect to dimension, sample size, and the classification accuracy of nearest neighbors. For points drawn from uniform distributions, lower values of $k$ perform better, whereas $\mathcal{L}_{\infty}$ performs best for normally distributed points.  Regardless of the choice of metric, the distance between points diminishes as dimension increases. Classification accuracy, however, decreases with respect to dimension. We also show that classification accuracy decreases as the cardinality of the class set increases.
+In the age of big data, the analysis of features in many real-world applications requires the use of high dimensional spaces. Many machine learning techniques, including similarity indexing, density estimation, and nearest neighbors, use the proximity of points in $N$-dimensional as the primary means of classification. However, the geometry of high dimensional spaces and the metrics used to measure distance reduces the efficacy of these techniques. Building upon the work of Beyer, Aggarwal, Haralick, and others, we provide experimental results concerning the performance of $\mathcal{L}_k$-based metrics with respect to dimension, sample size, and the classification accuracy of nearest neighbors. For points drawn from uniform distributions, lower values of $k$ perform better, whereas $\mathcal{L}_{\infty}$ performs best for normally distributed points.  Regardless of the choice of metric, the distance between points diminishes as dimension increases. Classification accuracy, however, decreases with respect to dimension. We also show that classification accuracy decreases as the cardinality of the class set increases.
 \end{abstract}
 \tableofcontents
 \section{Introduction}
@@ -40,7 +40,7 @@ It is common in the area of genomics and computational biology for a problem to 
 \paragraph{}
 The explosion of features in modern big data is not without its challenges.  As shown in \cite{aggarwal2001surprising}, the increase in the number of features considered, which are usually considered as a multi-dimensional space, has grave repercussions for machine learning techniques that rely on a measure of distance between points in the feature space. Common measures such as Euclidean distance no longer provide sufficient discrimination between points,
 \paragraph{}
-In this paper, we will provide an overview of the novel geometry of high dimensional spaces. Expanding upon the results of \cite{aggarwal2001surprising}, we will explore the effects of dimension, sample size, and metric choice on distances in high dimensional space. Utilizing the nearest neighbor technique, we also explore the repercussions of these choices on classification accuracy. Our experiments show that regardless of the choice of metric, the average ratio of maximum distances to minimum distances among points in the space approaches unity as the number of dimensions increases. For points drawn from uniform distributions, metrics induced by norms $\mathcal{L}_k$ with lower $k$ values perform better than higher ones, whereas for normally distributed points the max norm  $\mathcal{L}_{\infty}$. We show that classification accuracy increases as dimension does, but is negatively affected by increases in the cardinality of the set of classes.
+In this paper, we will provide an overview of the novel geometry of high dimensional spaces. Expanding upon the results of \cite{aggarwal2001surprising}, we will explore the effects of dimension, sample size, and metric choice on distances in high dimensional space. Utilizing the nearest neighbor technique, we also explore the repercussions of these choices on classification accuracy. Our experiments show that regardless of the choice of metric, the average ratio of maximum distances to minimum distances among points in the space increases as the number of dimensions increase. For points drawn from uniform distributions, metrics induced by norms $\mathcal{L}_k$ with lower $k$ values perform better than higher ones, whereas for normally distributed points the max norm  $\mathcal{L}_{\infty}$ performs the best. We show that classification accuracy increases as dimension does, but is negatively affected by increases in the cardinality of the set of classes.
 
 \section{Properties of High Dimensional Spaces}
 \subsection{The Geometry of High Dimensional Spaces}
@@ -76,7 +76,7 @@ $$
 $$
 where $Dmax$ and $Dmin$ are respectively the furthest and closest points to the origin in a data set under the metric induced by $\mathcal{L}_k$. The authors extend work by Beyer\cite{beyer1999nearest} to show that, irrespective of the distribution the points are drawn from, $Dmax_n^k-Dmin_n^k$ increases at a rate of $n^{1/k-1/2}$. This has implications for how each  $\mathcal{L}_k$ performs in high dimensions. Generally speaking, the higher the value of $k$ the less distance can be used to discriminate among points.
 \paragraph{}
-In addition to testing standard $\mathcal{L}_k$ norms, the Aggrawal, et. al investigate fractional norms, where $0< k < 1$. For these values of $k$, the relative contrast remains a valid measure in higher dimensions that integral values. Classification accuracy for the $l$-nearest neighbor algorithm is tested on both synthetic and real datasets. The authors define accuracy as the total number true positives classified. It is demonstrated that fractional metrics are the most accurate when comparison to a random classification of the data.
+In addition to testing standard $\mathcal{L}_k$ norms,  Aggarwal, et al. investigate fractional norms, where $0< k < 1$. For these values of $k$, the relative contrast remains a valid measure in higher dimensions that integral values. Classification accuracy for the $l$-nearest neighbor algorithm is tested on both synthetic and real datasets. The authors define accuracy as the total number true positives classified. It is demonstrated that fractional metrics are the most accurate when comparison to a random classification of the data.
 \paragraph{}
 In this paper, we wish to experimentally verify these counterintuitive effects. We will perform experiments to determine the effects of dimension, metric choice, and sample size on the distances between points. We will also experiment with drawing points from different distributions. Moreover, we will also explore the effects of these parameters on classification accuracy. 
 \section{Experimental Results}
@@ -113,7 +113,7 @@ In this set of experiments, each of the $N$ components of the $K$ points were dr
     \end{subfigure}
     \caption{Average distance ratio $r$ of $K$ samples for metrics $L_1,L_2,$ and $L_{\infty}$, Uniform Distribution. Standard deviation bars are depicted for each metric and dimension.}\label{fig:exp11}
 \end{figure}
-As evinced by the large standard deviations, there is a high degree of noise for the smallest sample size ($K=5$),  with no metric being consistently better than the other even as the dimension is increased. However, by $K=50$ a clear trend has formed, with each lower-valued $p$-metric performing better than those with greater value. Notice that the noise of the data has also been reduced. At $K=500$ samples the results are the same, again with less noise that the previous two sample sets.
+As evinced by the large standard deviations, there is a high degree of noise for the smallest sample size ($K=5$),  with no metric being consistently better than the other even as the dimension is increased. However, by $K=50$ a clear trend has formed, with each lower-valued $p$-metric performing better than those with greater value. Notice that the noise of the data has also been reduced. At $K=500$ samples the results are the same, again with less noise than the previous two sample sets.
 \
 \begin{figure}[H]
 \centering
@@ -185,23 +185,23 @@ In order to isolate the difference in performance, we first repeated the experim
         \caption{The Effect of Normalization on Distance Ratio $r$}
 \end{figure}
 \pagebreak
-For a vector whose components are drawn from a uniform distribution on $(0, 1)$, the $\mathcal{L}_{\infty}$ is bounded by 1, whereas a vector whose components are drawn from a normal distribution arern't bounded, even when the vector is normalized.
+For a vector whose components are drawn from a uniform distribution on $(0, 1)$, the $\mathcal{L}_{\infty}$ is bounded by 1, whereas a vector whose components are drawn from a normal distribution are unbounded, even when the vector is normalized.
 
-Displayed below is the variance of the $\mathcal{L}_{\infty}$ norms on 1000 vectors whose components are randomly drawn from uniform and normal distributions respectively, plotted against the arity of the vector.  The variance decreases to approximately 0 for the uniform distribution, while still remaining relatively high for the normal distribution:
+Displayed below is the average variance of the $\mathcal{L}_{\infty}$ norms of 1000 vectors whose components are randomly drawn from uniform and normal distributions respectively, plotted against the arity of the vector.  The variance decreases to approximately 0 for the uniform distribution, while still remaining relatively high for the normal distribution:
 \begin{figure}[H]
 \centering
         \includegraphics[width=.75\textwidth]{exp2-var-norm.png}
         \caption{Average Variance of $\mathcal{L}_{\infty}$}
         \label{fig:exp2varnorm}
 \end{figure}
-From \cite{simlinf}, the $\mathcal{L}_{\infty}$ is good at capturing outlying data. Due to the geometry of high dimensional spaces, outlying values become the defining points of our data. This, combined with the variance of $\mathcal{L}_{\infty}$ of vectors drawn from the normal distributions, may explain these counterintuitive results.
+By its use of the maximum component of the vector, $\mathcal{L}_{\infty}$ is good at capturing outlying data. Due to the geometry of high dimensional spaces, outlying values become the defining points of our data. This, combined with the variance of $\mathcal{L}_{\infty}$ of vectors drawn from the normal distributions, may explain these counterintuitive results.
 
 \subsection{Classification Accuracy}
 \paragraph{}
 In \cite{aggarwal2001surprising}, the impact of different norms on classification accuracy was investigated, where it was demonstrated that, with respect to a random classification, lower valued norms performed better. In this section, we investigate how classification accuracy varies with respect to dimension, sample size, and and data variance. The parameters used in these experiments are:
 \begin{itemize}
 \item $N$ - the dimension of the space, taking values from $[1,10)\cup[10,20,\ldots,100]$
-\item $K$ - the samples space, taking values in $\{10,300\}$ in increments of 10
+\item $K$ - the number of samples, taking values in $\{10,300\}$ in increments of 10
 \item $M$ - the number of points in the data set to be classified
 \item $\sigma$ - the standard deviation of a normal distribution, with $\sigma\in\{.05,.1,.15,.2,.25\}$
 \end{itemize}
@@ -290,7 +290,7 @@ In order to discern the effect of the number of classes on accuracy, we performe
         \includegraphics[width=\textwidth]{exp1-2-varying_classes.png}
     \caption{Accuracy as Class Sets are Varied}\label{fig:exp1-2-varclass}
 \end{figure}
-In the left half of Figure \ref{fig:exp1-2-varclass}, we see that the positive correlation between accuracy and dimension is preserved from the binary classification experiments, albeit with lower overall accuracy. This trend is demonstrated in the left half of the figure. The data suggest that the relatively high accuracy in the original binary classification is due to the proximity of points in high dimensional space, coupled with a paucity of classification choices.
+In the left half of Figure \ref{fig:exp1-2-varclass}, we see that the positive correlation between accuracy and dimension is preserved from the binary classification experiments, albeit with lower overall accuracy. This trend is demonstrated in the left half of the figure. The data suggest that the relatively high accuracy in the original binary classification is due to the paucity of classification choices.
 \section{Conclusion}
 \paragraph{}
 In conclusion, we have demonstrated that the geometry of high dimensional space greatly impacts the performance of machine learning techniques like nearest neighbor, that rely upon spatial proximity for their results. The distance between points becomes a poor discriminant in these spaces. We have seen that both the distribution of points as well as the metric used must be considered. We have seen that classification accuracy is effected by the dimension of the space as well as the number of classes used in assignment.
