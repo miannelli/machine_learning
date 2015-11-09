@@ -5,6 +5,15 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{float}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand{\Q}{\mathbb{Q}}
+
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\C}{\mathbb{C}}
 
 \title{The Ramifications of High Dimensional Spaces on Machine Learning Techniques}
 \author{Jonathan Gryak
@@ -34,19 +43,39 @@ not sure if that's useful here
 
 \
 
-The ``curse of dimensionality" coined by Richard Bellman in 1961\cite{bellman1961adaptive}, comes in many forms, including Bellman's original context of optimization, functional approximation, and combinatorics. In this era of ``big data", ``big" not only refers to the indefatigable increase the amount of data collected, but also in the number of features and components that are utilized in the data analysis. However,  as shown in\cite{aggarwal2001surprising}, the increase in the number of features considered, which are usually considered as a multi-dimensional space, has grave repercussions for machine learning techniques that rely on some measure of distance between points in the feature space. Moreover, in \cite{beyer1999nearest}...
+The ``curse of dimensionality" coined by Richard Bellman in 1961\cite{bellman1961adaptive}, comes in many forms, including Bellman's original context of optimization, functional approximation, and combinatorics. In this era of ``big data", ``big" not only refers to the indefatigable increase the amount of data collected, but also in the number of features and components that are utilized in the data analysis. However,  as shown in\cite{aggarwal2001surprising}, the increase in the number of features considered, which are usually considered as a multi-dimensional space, has grave repercussions for machine learning techniques that rely on some measure of distance between points in the feature space. Moreover, in 
 \section{Properties of High Dimensional Spaces}
 I'm not sure what we should put here. The only reference we have for this part are Haralick's slides.
 
 \
-
+Geometry
 -distance between spaces decreases\\
 -volume shrinks\\
 -shell pushed to boundary\\
 -bounding box volume pushed to corners
 
 \
-Here we should reference the specific results in \cite{aggarwal2001surprising}, then talk about our ``motivation" for confirming the results.
+In \cite{aggarwal2001surprising}, the authors investigate this peculiar geometry through the lens of $\mathcal{L}_k$ norms. For $k\in\Z$, the norm of two vectors $x,y\in\R^n$ is defined as
+$$
+\mathcal{L}_k=\left(\sum_{i=1}^n\|x\|^k\right)^{1/k}.
+$$
+Note that the limit of this norm is called the $\mathcal{L}_{\infty}$ or max norm, and is defined as
+$$
+\mathcal{L}_k=\max(|x_1|,\ldots,|x_n|).
+$$
+The authors make use of a ratio called the \emph{relative contrast}, defined as
+$$
+\dfrac{Dmax_n^k-Dmin_n^k}{Dmin_n^k},
+$$
+where $Dmax$ and $Dmin$ are respectively the furthest and closest points to the origin in a data set under the metric induced by $\mathcal{L}_k$. The authors extend work by Beyer\cite{beyer1999nearest} to show that, irrespective of the distribution the points are drawn from, $Dmax_n^k-Dmin_n^k$ increases at a rate of $n^{1/k-1/2}$. This has implications for how each  $\mathcal{L}_k$ performs in high dimensions. Generally speaking, the higher the value of $k$ the less distance can be used to discriminate among points.
+\
+
+In addition to 
+-accuracy
+-fraction metrics
+\
+
+In this paper, we wish to experimentally verify these counterintuitive effects. We will perform experiments to determine the effects of dimension, metric choice, and sample size on the distances between points. We will also experiment with drawing points from different distributions. Moreover, we will also explore the effects of these parameters on classification accuracy. 
 \section{Experimental Results}
 As explained in the previous section, we wish to verify experimentally two effects of high dimension spaces, namely the distance between points and the effect on classification accuracy. 
 \subsection{Distance Ratio}
@@ -105,9 +134,9 @@ $\infty$ & 100 & 0.76011 & 14.13\%\\
 \caption{Average distance ratios for $K=500$, comparing each norm to $L_1$.}
 \label{fig:exp11data}
 \end{figure}
-In Figure \ref{fig:exp11data}, we see a comparison of the average distance ratios for each metric on the $K=500$ data set. At $N=1$, $r$ is on the order of $10^{-3}$, with the $L_1$ and $L_{\infty}$ metrics performing within $9\%$ of each other. At $N=100$, $r$ varies between $2/3$ and roughly $3/4$, with a $14\%$ difference between $L_1$ and $L_{\infty}$.
+In Figure \ref{fig:exp11data}, we see a comparison of the average distance ratios for each metric on the $K=500$ data set. At $N=1$, $r$ is on the order of $10^{-3}$, but by $N=100$, $r$ has grown to approximately .76.
 \subsubsection{Normal Distribution}
-In this set of experiments, each of the $N$ components of the $K$ points were drawn from a normal distribution with mean 0 and variance 1. Figure \ref{fig:exp2} depicts the results for each sample size $K$.
+In this set of experiments, each of the $N$ components of the $K$ points were drawn from a normal distribution with mean 0 and variance 1. The points were normalized using the $\mathcal{L}_2$ norm. Figure \ref{fig:exp2} depicts the results for each sample size $K$.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[h]{0.45\textwidth}
@@ -132,30 +161,22 @@ In this set of experiments, each of the $N$ components of the $K$ points were dr
     \end{subfigure}
     \caption{Average distance ratio $r$ of $K$ samples for metrics $L_1,L_2,$ and $L_{\infty}$, normal distribution with mean 0 and variance 1. Standard deviation bars are depicted for each metric and dimension.}\label{fig:exp2}
 \end{figure}
-As evinced by the large standard deviations, there is a high degree of noise for the smallest sample size ($K=5$),  with no metric being consistently better than the other even as the dimension is increased. Note that due to the normal distribution, we get a standard deviation range which is negative for small values of $N$. However, by $K=50$ a clear trend has formed, with $L_1$ performing better than $L_2$, and with $L_{\infty}$ having the best performance. At $K=500$ samples the results are the same, again with less noise that the previous two sample sets.
+As with the uniform distribution, the trend in the performance of the various norms is smoothed as $K$ increases. Also in common with the previous experiment, the $\mathcal{L}_1$ performs better than the $\mathcal{L}_2$ norm. However, it is the $\mathcal{L}_{\infty}$ norm which performs best as $N$ increases.
+\
+
+In order to isolate the difference in performance, we first repeated the experiment but varying the normalization. While normalizing using a different norm did change the specific means, it did not change the overall performance. Nor did repeating the experiment without normalization. We then turned our attention to how the $\mathcal{L}_{\infty}$ norm affects points drawn from a uniform or normal distribution differently.
+\
+
+For a vector whose components are drawn from a uniform distribution on $(0, 1)$, the $\mathcal{L}_{\infty}$ is bounded by 1, whereas a vector whose components are drawn from a normal distribution arern't bounded, even when the vector is normalized.
+
+Displayed below is the variance of the $\mathcal{L}_{\infty}$ norms on 1000 vectors whose components are randomly drawn from uniform and normal distributions respectively, plotted against the arity of the vector.  The variance decreases to approximately 0 for the uniform distribution, while still remaining relatively high for the normal distribution:
 \begin{figure}[H]
 \centering
-\begin{tabular}{|c|c|c|c|}
-\hline
-Metric & $N$ & $r$ & \% Difference\\
-\hline
-1 & 1 & 0 & 0\\
-2 & 1 & 0 & 0\\
-$\infty$ & 1 & 0 & N/A\\
-\hline
-1 & 10 & 0.30827 & 6.22\%\\
-2 & 10 & 0.32209 & 10.98\%\\
-$\infty$ & 10 & 0.29021 & N/A\\
-\hline
-1 & 100 & 0.70784 & 45.62\%\\
-2 & 100 & 0.73351 & 50.90\%\\
-$\infty$ & 100 & 0.48610 & N/A\\
-\hline
-\end{tabular}
-\caption{Average distance ratios for $K=500$, comparing each norm to $L_{\infty}$.}
-\label{fig:exp2data}
+        \includegraphics[width=\textwidth]{exp2-var-norm.png}
+        \caption{Average Variance of $\mathcal{L}_{\infty}$}
+        \label{fig:exp2varnorm}
 \end{figure}
-In Figure \ref{fig:exp2data}, we see a comparison of the average distance ratios for each metric on the $K=500$ data set. At $N=1$, $r=0$ for all metrics. At $N=100$, $r$ varies between $7/10$ and roughly $1/2$, with a $50\%$ difference between $L_2$ and $L_{\infty}$.
+From \cite{simlinf}, the $\mathcal{L}_{\infty}$ is good at capturing outlying data. Due to the geometry of high dimensional spaces, outlying values become the defining points of our data. This, combined with the variance of $\mathcal{L}_{\infty}$ of vectors drawn from the normal distributions, may explain these counterintuitive results.
 
 \subsection{Classification Accuracy}
 \paragraph{}
@@ -245,9 +266,18 @@ Our experiments showed a negative relationship between accuracy and sample size,
 \end{figure}
 Our initial range of $\sigma$  did not reveal any significant correlation with accuracy, so the range of $\sigma$ was expanded from .05  to .95 inclusively in .05 increments, keeping $N$ and $K$ constant at 100 and 300 respectively. As before, 10 trials were run for each $\sigma$ value, and the results for each were averaged. Even in this expanded range, the accuracy oscillated as $\sigma$ increased, staying with a range of .56 to .60.
 \subsubsection{On the Number of Classes and Accuracy}
-
+In order to discern the effect of the number of classes on accuracy, we performed additional experiments using class sets of varying cardinality:
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\textwidth]{exp1-2-varying_classes.png}
+    \caption{Accuracy as Class Sets are Varied}\label{fig:exp1-2-varclass}
+\end{figure}
+In the left half of Figure \ref{fig:exp1-2-varclass}, we see that the positive correlation between accuracy and dimension is preserved from the binary classification experiments, albeit with lower overall accuracy. This trend is demonstrated in the left half of the figure. The data suggest that the relatively high accuracy in the original binary classification is due to the proximity of points in high dimensional space, coupled with a paucity of classification choices.
 \section{Conclusion}
--summarize results\\
+In conclusion, we have demonstrated that the geometry of high dimensional space greatly impacts the performance of machine learning techniques like near neighbors, that rely upon spatial proximity for their results. The distance between points becomes a poor discriminant in these spaces. We have seen that both the distribution of points as well as the metric used must be considered. We have seen that classification accuracy is effected by the dimension of the space as well as the number of classes used in assignment.
+\
+
+Future experiments may investi
 -suggest other experiments (fractional distance metric, other clustering, other ML techniques which use distance?
 	
 \bibliographystyle{plain}

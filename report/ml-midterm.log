@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 NOV 2015 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  9 NOV 2015 01:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -156,18 +156,18 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (./ml-midterm.aux)
 \openout1 = `ml-midterm.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -233,24 +233,24 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 20.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 29.
 
-LaTeX Font Info:    No file OMScmtt.fd. on input line 20.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 29.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 20.
+(Font)              for symbol `textbraceleft' on input line 29.
 
 (./ml-midterm.toc)
 \tf@toc=\write3
@@ -258,59 +258,64 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
  [1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 84.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
-
-<l-experiment1-1-5-inf.png, id=15, 578.16pt x 433.62pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
+<l-experiment1-1-5-inf.png, id=25, 578.16pt x 433.62pt>
 File: l-experiment1-1-5-inf.png Graphic file (type png)
 
 <use l-experiment1-1-5-inf.png>
-Package pdftex.def Info: l-experiment1-1-5-inf.png used on input line 64.
+Package pdftex.def Info: l-experiment1-1-5-inf.png used on input line 93.
 (pdftex.def)             Requested size: 155.24895pt x 116.43716pt.
 
-<l-experiment1-1-50-inf.png, id=17, 578.16pt x 433.62pt>
+<l-experiment1-1-50-inf.png, id=27, 578.16pt x 433.62pt>
 File: l-experiment1-1-50-inf.png Graphic file (type png)
 
 <use l-experiment1-1-50-inf.png>
-Package pdftex.def Info: l-experiment1-1-50-inf.png used on input line 69.
+Package pdftex.def Info: l-experiment1-1-50-inf.png used on input line 98.
 (pdftex.def)             Requested size: 155.24895pt x 116.43716pt.
- [2]
-<l-experiment1-1-500-inf.png, id=23, 578.16pt x 433.62pt>
+
+<l-experiment1-1-500-inf.png, id=28, 578.16pt x 433.62pt>
 File: l-experiment1-1-500-inf.png Graphic file (type png)
 
 <use l-experiment1-1-500-inf.png>
-Package pdftex.def Info: l-experiment1-1-500-inf.png used on input line 78.
+Package pdftex.def Info: l-experiment1-1-500-inf.png used on input line 107.
 (pdftex.def)             Requested size: 310.4979pt x 232.87433pt.
- [3 <./l-experiment1-1-5-inf.png> <./l-experiment1-1-50-inf.png> <./l-experimen
-t1-1-500-inf.png>]
-<l-experiment2-5-inf.png, id=33, 578.16pt x 433.62pt>
+ [3 <./l-experiment1-1-5-inf.png> <./l-experiment1-1-50-inf.png>] [4 <./l-exper
+iment1-1-500-inf.png>]
+<l-experiment2-5-inf.png, id=39, 578.16pt x 433.62pt>
 File: l-experiment2-5-inf.png Graphic file (type png)
 
 <use l-experiment2-5-inf.png>
-Package pdftex.def Info: l-experiment2-5-inf.png used on input line 114.
+Package pdftex.def Info: l-experiment2-5-inf.png used on input line 143.
 (pdftex.def)             Requested size: 155.24895pt x 116.43716pt.
 
-<l-experiment2-50-inf.png, id=34, 578.16pt x 433.62pt>
+<l-experiment2-50-inf.png, id=40, 578.16pt x 433.62pt>
 File: l-experiment2-50-inf.png Graphic file (type png)
 
 <use l-experiment2-50-inf.png>
-Package pdftex.def Info: l-experiment2-50-inf.png used on input line 119.
+Package pdftex.def Info: l-experiment2-50-inf.png used on input line 148.
 (pdftex.def)             Requested size: 155.24895pt x 116.43716pt.
 
-<l-experiment2-500-inf.png, id=35, 578.16pt x 433.62pt>
+<l-experiment2-500-inf.png, id=41, 578.16pt x 433.62pt>
 File: l-experiment2-500-inf.png Graphic file (type png)
 
 <use l-experiment2-500-inf.png>
-Package pdftex.def Info: l-experiment2-500-inf.png used on input line 129.
+Package pdftex.def Info: l-experiment2-500-inf.png used on input line 158.
 (pdftex.def)             Requested size: 310.4979pt x 232.87433pt.
- [4 <./l-experiment2-5-inf.png> <./l-experiment2-50-inf.png>] [5 <./l-experimen
-t2-500-inf.png>]
-Overfull \hbox (21.45183pt too wide) in paragraph at lines 167--168
+ [5 <./l-experiment2-5-inf.png> <./l-experiment2-50-inf.png>] <exp2-var-norm.pn
+g, id=47, 536.75531pt x 697.10437pt>
+File: exp2-var-norm.png Graphic file (type png)
+
+<use exp2-var-norm.png>
+Package pdftex.def Info: exp2-var-norm.png used on input line 175.
+(pdftex.def)             Requested size: 345.0pt x 448.05992pt.
+ [6 <./l-experiment2-500-inf.png>] [7 <./exp2-var-norm.png (PNG copy)>]
+Overfull \hbox (21.45183pt too wide) in paragraph at lines 188--189
 []$\OML/cmm/m/it/10 ^^[$ \OT1/cmr/m/n/10 - the stan-dard de-vi-a-tion of a nor-
 mal dis-tri-bu-tion, with $\OML/cmm/m/it/10 ^^[ \OMS/cmsy/m/n/10 2 f\OML/cmm/m/
 it/10 :\OT1/cmr/m/n/10 05\OML/cmm/m/it/10 ; :\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 
@@ -318,38 +323,46 @@ it/10 :\OT1/cmr/m/n/10 05\OML/cmm/m/it/10 ; :\OT1/cmr/m/n/10 1\OML/cmm/m/it/10
 OT1/cmr/m/n/10 25\OMS/cmsy/m/n/10 g$ 
  []
 
-<l-experiment1-2-accuracy-n-k-300-s-005.png, id=45, 578.16pt x 433.62pt>
+<l-experiment1-2-accuracy-n-k-300-s-005.png, id=56, 578.16pt x 433.62pt>
 File: l-experiment1-2-accuracy-n-k-300-s-005.png Graphic file (type png)
 
 <use l-experiment1-2-accuracy-n-k-300-s-005.png>
 Package pdftex.def Info: l-experiment1-2-accuracy-n-k-300-s-005.png used on inp
-ut line 178.
+ut line 199.
 (pdftex.def)             Requested size: 345.0pt x 258.74484pt.
- [6]
-<l-experiment1-2-accuracy-k-n-10-s-005.png, id=49, 578.16pt x 433.62pt>
+ [8]
+<l-experiment1-2-accuracy-k-n-10-s-005.png, id=60, 578.16pt x 433.62pt>
 File: l-experiment1-2-accuracy-k-n-10-s-005.png Graphic file (type png)
 
 <use l-experiment1-2-accuracy-k-n-10-s-005.png>
 Package pdftex.def Info: l-experiment1-2-accuracy-k-n-10-s-005.png used on inpu
-t line 207.
+t line 228.
 (pdftex.def)             Requested size: 155.24895pt x 116.43716pt.
 
-<l-experiment1-2-accuracy-k-n-100-s-005.png, id=50, 578.16pt x 433.62pt>
+<l-experiment1-2-accuracy-k-n-100-s-005.png, id=61, 578.16pt x 433.62pt>
 File: l-experiment1-2-accuracy-k-n-100-s-005.png Graphic file (type png)
 
 <use l-experiment1-2-accuracy-k-n-100-s-005.png>
 Package pdftex.def Info: l-experiment1-2-accuracy-k-n-100-s-005.png used on inp
-ut line 212.
+ut line 233.
 (pdftex.def)             Requested size: 155.24895pt x 116.43716pt.
- [7 <./l-experiment1-2-accuracy-n-k-300-s-005.png>] <experiment1-2-sigmas.png, 
-id=56, 578.16pt x 433.62pt>
+ [9 <./l-experiment1-2-accuracy-n-k-300-s-005.png>] <experiment1-2-sigmas.png, 
+id=66, 578.16pt x 433.62pt>
 File: experiment1-2-sigmas.png Graphic file (type png)
 
 <use experiment1-2-sigmas.png>
-Package pdftex.def Info: experiment1-2-sigmas.png used on input line 243.
+Package pdftex.def Info: experiment1-2-sigmas.png used on input line 264.
 (pdftex.def)             Requested size: 345.0pt x 258.74484pt.
- [8 <./l-experiment1-2-accuracy-k-n-10-s-005.png> <./l-experiment1-2-accuracy-k
--n-100-s-005.png>] (./ml-midterm.bbl [9 <./experiment1-2-sigmas.png>]
+ [10 <./l-experiment1-2-accuracy-k-n-10-s-005.png> <./l-experiment1-2-accuracy-
+k-n-100-s-005.png>]
+<exp1-2-varying_classes.png, id=72, 740.7675pt x 590.205pt>
+File: exp1-2-varying_classes.png Graphic file (type png)
+
+<use exp1-2-varying_classes.png>
+Package pdftex.def Info: exp1-2-varying_classes.png used on input line 272.
+(pdftex.def)             Requested size: 345.0pt x 274.88377pt.
+ [11 <./experiment1-2-sigmas.png>]
+(./ml-midterm.bbl [12 <./exp1-2-varying_classes.png>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -359,38 +372,40 @@ Missing character: There is no ù in font cmr10!
 Missing character: There is no ‚ in font cmti10!
 Missing character: There is no Ä in font cmti10!
 Missing character: There is no ô in font cmti10!
-) [10] (./ml-midterm.aux)
+) [13] (./ml-midterm.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3655 strings out of 493117
- 54866 string characters out of 6135433
- 118045 words of memory out of 5000000
- 7051 multiletter control sequences out of 15000+600000
+ 3667 strings out of 493117
+ 55152 string characters out of 6135433
+ 117095 words of memory out of 5000000
+ 7061 multiletter control sequences out of 15000+600000
  13871 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,38p,825b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ml-midterm.pdf (10 pages, 404060 bytes).
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ml-midterm.pdf (13 pages, 491297 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
