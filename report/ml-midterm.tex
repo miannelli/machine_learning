@@ -29,39 +29,39 @@ City University of New York\\
 \maketitle
 
 \begin{abstract}
-Stuff
+In the age of big data, the analysis of feature in many real-world applications requires the use of high dimensional spaces. Many machine learning techniques, including similarity indexing, density estimation, and nearest neighbors, use the proximity of points in $N$-dimensional as the primary means of classification. However, the geometry of high dimensional spaces and the metrics used to measure distance reduces the efficacy of these techniques. Building upon the work of Beyer, Aggarwal, Haralick, and others, we provide experimental results concerning the performance of $\mathcal{L}_k$-based metrics with respect to dimension, sample size, and the classification accuracy of nearest neighbors. For points drawn from uniform distributions, lower values of $k$ perform better, whereas $\mathcal{L}_{\infty}$ performs best for normally distributed points.  Regardless of the choice of metric, the distance between points diminishes as dimension increases. Classification accuracy, however, decreases with respect to dimension. We also show that classification accuracy decreases as the cardinality of the class set increases.
 \end{abstract}
 \tableofcontents
 \section{Introduction}
-motivation:\\
--nearest neighbor\\
--k-means\\
--similarity indexing\\
-need more references for the use of these in high dimensions\\
-in the introduction to machine learning book, it speaks of dimensionality with respect to density estimation,
-not sure if that's useful here
-
-\
-
-The ``curse of dimensionality" coined by Richard Bellman in 1961\cite{bellman1961adaptive}, comes in many forms, including Bellman's original context of optimization, functional approximation, and combinatorics. In this era of ``big data", ``big" not only refers to the indefatigable increase the amount of data collected, but also in the number of features and components that are utilized in the data analysis.  
-
+\paragraph{}
+The ``curse of dimensionality" originated with Richard Bellman in 1961\cite{bellman1961adaptive} in the context of optimization. Since then it has been applied to the difficulty of working in higher dimensional spaces in fields such as function approximation, combinatorics, and machine learning. In this era of ``big data", ``big" not only refers to the inexorable increase in the amount of data collected, but also in the number of features and components that are utilized in the data analysis.  
+\paragraph{}
 It is common in the area of genomics and computational biology for a problem to have more features than observations.  Such is the case in gene expression arrays where where a data set can have thousands of genes, yet less than a hundred samples \cite{hastie01statisticallearning}.  Other examples of high dimensional data can be found in recommender systems, such as those found at Amazon or Netflix where customers may have rated up to thousands of products.  In 2006, Netflix released an anonymized data set consisting of the ratings of a half-million customers on nearly 18,000 movies\cite{Bennett:2007:KCW:1345448.1345459}.
-
-The explosion of features in modern big data is not without its challenges.  As shown in\cite{aggarwal2001surprising}, the increase in the number of features considered, which are usually considered as a multi-dimensional space, has grave repercussions for machine learning techniques that rely on some measure of distance between points in the feature space. Moreover, in 
-
-
+\paragraph{}
+The explosion of features in modern big data is not without its challenges.  As shown in \cite{aggarwal2001surprising}, the increase in the number of features considered, which are usually considered as a multi-dimensional space, has grave repercussions for machine learning techniques that rely on a measure of distance between points in the feature space. Common measures such as Euclidean distance no longer provide sufficient discrimination between points,
+\paragraph{}
+In this paper, we will provide an overview of the novel geometry of high dimensional spaces. Expanding upon the results of \cite{aggarwal2001surprising}, we will explore the effects of dimension, sample size, and metric choice on distances in high dimensional space. Utilizing the nearest neighbor technique, we also explore the repercussions of these choices on classification accuracy. Our experiments show that regardless of the choice of metric, the average ratio of maximum distances to minimum distances among points in the space approaches unity as the number of dimensions increases. For points drawn from uniform distributions, metrics induced by norms $\mathcal{L}_k$ with lower $k$ values perform better than higher ones, whereas for normally distributed points the max norm  $\mathcal{L}_{\infty}$. We show that classification accuracy increases as dimension does, but is negatively affected by increases in the cardinality of the set of classes.
 
 \section{Properties of High Dimensional Spaces}
-I'm not sure what we should put here. The only reference we have for this part are Haralick's slides.
-
-\
-Geometry
--distance between spaces decreases\\
--volume shrinks\\
--shell pushed to boundary\\
--bounding box volume pushed to corners
-
-\
+\subsection{The Geometry of High Dimensional Spaces}
+In \cite{haralickgeometryhd}, Haralick outlines the geometry of bounded, high dimensional spaces and its effect on volume and distance. We summarize these results below:
+\begin{itemize} 
+\item\emph{Volume of a Sphere} - In high dimensional spaces, the volume of a sphere of fixed radius $r$ with dimension $n$ tends to zero as $n$ increases, specifically
+$$
+\lim_{n\rightarrow\infty}\dfrac{\pi^{n/2}r^n}{\Gamma(d/2+1)}=0,
+$$
+with $\Gamma$ being the gamma function.
+\item \emph{Volume Contained in Shell} - For any hypersphere in $n$ dimensions of radius $r$, let
+$$
+f(n,\Delta r)=1 -\dfrac{r^n}{(r+\Delta r)^n}
+$$
+be the fraction of a volume contained in a shell of width $\Delta r$. For a fixed width, $f(n,\Delta r)$ tends to 1 as $n$ increases, thus all of the volume of the sphere is pushed into its shell.
+\item\emph{Bounding Hypercube} - For any hypercube bounding a hypersphere in high dimensional space, the ratio of the volume of the bounding hypercube to the volume of its enclosed hypersphere approaches zero as dimension increases, with less that 10\% of the hypercube's volume contained in the hypersphere for dimensions $\geq 6$. This suggest that all points in the bounding hypercube are pushed into its corners. 
+\item\emph{Maximum and Minimum Distances} - In \cite{haralicknn}, it is shown that for any point in the space, the maximum and minimum distances to any other point in the space increase with as the dimension of the space does, and that the ratio of the two approaches unity.  This evinces the poor discrimination distance provides among points in high dimension.
+\end{itemize}
+For machine learning techniques that rely upon the distance or density of space, the geometry suggests that naively extrapolating these techniques to higher dimensions will produce poor results.
+\subsection{The Implications of Metric Choice}
+\paragraph{}
 In \cite{aggarwal2001surprising}, the authors investigate this peculiar geometry through the lens of $\mathcal{L}_k$ norms. For $k\in\Z$, the norm of two vectors $x,y\in\R^n$ is defined as
 $$
 \mathcal{L}_k=\left(\sum_{i=1}^n\|x\|^k\right)^{1/k}.
@@ -75,13 +75,9 @@ $$
 \dfrac{Dmax_n^k-Dmin_n^k}{Dmin_n^k},
 $$
 where $Dmax$ and $Dmin$ are respectively the furthest and closest points to the origin in a data set under the metric induced by $\mathcal{L}_k$. The authors extend work by Beyer\cite{beyer1999nearest} to show that, irrespective of the distribution the points are drawn from, $Dmax_n^k-Dmin_n^k$ increases at a rate of $n^{1/k-1/2}$. This has implications for how each  $\mathcal{L}_k$ performs in high dimensions. Generally speaking, the higher the value of $k$ the less distance can be used to discriminate among points.
-\
-
-In addition to 
--accuracy
--fraction metrics
-\
-
+\paragraph{}
+In addition to testing standard $\mathcal{L}_k$ norms, the Aggrawal, et. al investigate fractional norms, where $0< k < 1$. For these values of $k$, the relative contrast remains a valid measure in higher dimensions that integral values. Classification accuracy for the $l$-nearest neighbor algorithm is tested on both synthetic and real datasets. The authors define accuracy as the total number true positives classified. It is demonstrated that fractional metrics are the most accurate when comparison to a random classification of the data.
+\paragraph{}
 In this paper, we wish to experimentally verify these counterintuitive effects. We will perform experiments to determine the effects of dimension, metric choice, and sample size on the distances between points. We will also experiment with drawing points from different distributions. Moreover, we will also explore the effects of these parameters on classification accuracy. 
 \section{Experimental Results}
 As explained in the previous section, we wish to verify experimentally two effects of high dimension spaces, namely the distance between points and the effect on classification accuracy. 
@@ -171,28 +167,30 @@ In this set of experiments, each of the $N$ components of the $K$ points were dr
 As with the uniform distribution, the trend in the performance of the various norms is smoothed as $K$ increases. Also in common with the previous experiment, the $\mathcal{L}_1$ performs better than the $\mathcal{L}_2$ norm. However, it is the $\mathcal{L}_{\infty}$ norm which performs best as $N$ increases.
 \
 
-In order to isolate the difference in performance, we first repeated the experiment but varying the normalization. While normalizing using a different norm did change the specific means, it did not change the overall performance or pattern as shown in \ref{fig:exp1-2-accuracy-n}. Nor did repeating the experiment without normalization as shown in \ref{no_normalization}. We then turned our attention to how the $\mathcal{L}_{\infty}$ norm affects points drawn from a uniform or normal distribution differently.
+In order to isolate the difference in performance, we first repeated the experiment but varying the normalization. While normalizing using a different norm did change the specific means, it did not change the overall performance or pattern as shown in Figure \ref{fig:normmetrics}. Nor did repeating the experiment without normalization as shown in \ref{fig:no_normalization}. We then turned our attention to how the $\mathcal{L}_{\infty}$ norm affects points drawn from a uniform or normal distribution differently.
 \
 \begin{figure}[H]
 \centering
-        \includegraphics[width=\textwidth]{normalization_metrics.png}
-        \caption{Average distance ratio r for each combination of normalization metric (rows) and distance metric (columns) varying over dimension of space N}
+\begin{subfigure}[h]{0.75\textwidth}
+        \includegraphics[width=1\textwidth]{normalization_metrics.png}
+        \caption{Average distance ratio $r$ for each combination of normalization metric (rows) and distance metric (columns) varying over dimension of space $N$}
         \label{fig:normmetrics}
-\end{figure}
+\end{subfigure}
 
-\begin{figure}[H]
-\centering
-        \includegraphics[width=\textwidth]{exp2without_normalization.jpg}
+\begin{subfigure}[h]{0.75\textwidth}
+        \includegraphics[width=1\textwidth]{exp2without_normalization.jpg}
         \caption{Average distance ratio for metrics $L_1,L_2,$ and $L_{\infty}$, non-normalized points whose components are drawn from a normal distribution with mean 0 and variance 1.}
         \label{fig:no_normalization}
+        \end{subfigure}
+        \caption{The Effect of Normalization on Distance Ratio $r$}
 \end{figure}
-
+\pagebreak
 For a vector whose components are drawn from a uniform distribution on $(0, 1)$, the $\mathcal{L}_{\infty}$ is bounded by 1, whereas a vector whose components are drawn from a normal distribution arern't bounded, even when the vector is normalized.
 
 Displayed below is the variance of the $\mathcal{L}_{\infty}$ norms on 1000 vectors whose components are randomly drawn from uniform and normal distributions respectively, plotted against the arity of the vector.  The variance decreases to approximately 0 for the uniform distribution, while still remaining relatively high for the normal distribution:
 \begin{figure}[H]
 \centering
-        \includegraphics[width=\textwidth]{exp2-var-norm.png}
+        \includegraphics[width=.75\textwidth]{exp2-var-norm.png}
         \caption{Average Variance of $\mathcal{L}_{\infty}$}
         \label{fig:exp2varnorm}
 \end{figure}
@@ -294,15 +292,10 @@ In order to discern the effect of the number of classes on accuracy, we performe
 \end{figure}
 In the left half of Figure \ref{fig:exp1-2-varclass}, we see that the positive correlation between accuracy and dimension is preserved from the binary classification experiments, albeit with lower overall accuracy. This trend is demonstrated in the left half of the figure. The data suggest that the relatively high accuracy in the original binary classification is due to the proximity of points in high dimensional space, coupled with a paucity of classification choices.
 \section{Conclusion}
+\paragraph{}
 In conclusion, we have demonstrated that the geometry of high dimensional space greatly impacts the performance of machine learning techniques like nearest neighbor, that rely upon spatial proximity for their results. The distance between points becomes a poor discriminant in these spaces. We have seen that both the distribution of points as well as the metric used must be considered. We have seen that classification accuracy is effected by the dimension of the space as well as the number of classes used in assignment.
-\
-
-Future experiments may investigate the performance of additional metrics, such as fractional distance metrics, to see if the trend continues and the performance of the $\mathcal{L}_k$ norm on a uniformly distributed data set increases as k decreases.
-
-In addition to normal and uniform distributions, the performance of the distance metrics can be tested on data sets consisting of varying distributions such as multi-modal or correlated data.
-
--suggest other experiments (fractional distance metric, other clustering, other ML techniques which use distance?
-	
+\paragraph{}
+Future experiments may investigate the performance of additional metrics, such as fractional distance metrics, to see if the trend continues and the performance of the $\mathcal{L}_k$ norm on a uniformly distributed data set increases as k decreases. In addition to normal and uniform distributions, the performance of the distance metrics can be tested on data sets consisting of varying distributions such as multi-modal or correlated data.
 \bibliographystyle{plain}
 \bibliography{ml-midterm}
 

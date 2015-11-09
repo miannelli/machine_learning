@@ -11,10 +11,31 @@ Richard Bellman.
 \newblock {\em Adaptive control processes: a guided tour}, volume~4.
 \newblock Princeton university press Princeton, 1961.
 
+\bibitem{Bennett:2007:KCW:1345448.1345459}
+James Bennett, Charles Elkan, Bing Liu, Padhraic Smyth, and Domonkos Tikk.
+\newblock Kdd cup and workshop 2007.
+\newblock {\em SIGKDD Explor. Newsl.}, 9(2):51--52, December 2007.
+
 \bibitem{beyer1999nearest}
 Kevin Beyer, Jonathan Goldstein, Raghu Ramakrishnan, and Uri Shaft.
 \newblock When is “nearest neighbor” meaningful?
 \newblock In {\em Database Theory - ICDT’99}, pages 217--235. Springer, 1999.
+
+\bibitem{haralickgeometryhd}
+Robert Haralick.
+\newblock High dimensional spaces.
+\newblock University Lecture, 2015.
+
+\bibitem{haralicknn}
+Robert Haralick.
+\newblock Nearest neighbor.
+\newblock University Lecture, 2015.
+
+\bibitem{hastie01statisticallearning}
+Trevor Hastie, Robert Tibshirani, and Jerome Friedman.
+\newblock {\em The Elements of Statistical Learning}.
+\newblock Springer Series in Statistics. Springer New York Inc., New York, NY,
+  USA, 2001.
 
 \bibitem{simlinf}
 Kristy Sim and Richard Hartley.
