@@ -18,6 +18,7 @@ mlplot.aggr_scatter_plot_file('l-experiment1-2','N','Accuracy',['K','sigma'],[30
 mlplot.aggr_scatter_plot_file('l-experiment1-2','sigma','Accuracy',['K','N'],[300,2],save=True)
 mlplot.aggr_scatter_plot_file('l-experiment1-2','sigma','Accuracy',['K','N'],[300,10],save=True)
 mlplot.aggr_scatter_plot_file('l-experiment1-2','sigma','Accuracy',['K','N'],[300,100],save=True)
+mlplot.aggr_scatter_plot_file('experiment1-2-5000-slice','sigma','Accuracy',['K','N'],[5000,100],linreg=True,save=True)
 
 mlplot.aggr_bar_plot_file('l-experiment2(3)-without_normalization','N','Mean','Metric',['K'],[500],error="StandardDeviation",save=True)
 mlplot.aggr_bar_plot_file('l-experiment2(4)-uniform_distribution','N','Mean','Metric',['K'],[500],error="StandardDeviation",save=True)
