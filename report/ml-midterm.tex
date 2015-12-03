@@ -145,7 +145,7 @@ $\infty$ & 100 & 0.71780 & 18.12\%\\
 \end{figure}
 In Figure \ref{fig:exp11data}, we see a comparison of the average distance ratios for each metric on the $K=5000$ data set. At $N=1$, $r$ is on the order of $10^{-4}$, but by $N=100$, $r$ has grown to approximately .76.
 \subsubsection{Normal Distribution}
-In this set of experiments, each of the $N$ components of the $K$ points were drawn from a normal distribution with mean 0 and variance 1. The points were normalized using the $\mathcal{L}_2$ norm. Figure \ref{fig:exp2} depicts the results for each sample size $K$.
+In this set of experiments, each of the $N$ components of the $K$ points were drawn from a normal distribution with mean 0 and variance 1. The points were normalized using the $\mathcal{L}_2$ norm, which results in the vectors being uniformly distributed on the unit hypersphere. Figure \ref{fig:exp2} depicts the results for each sample size $K$.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[h]{.8\textwidth}
@@ -208,8 +208,8 @@ In order to isolate the difference in performance, we first repeated the experim
         \caption{The Effect of Normalization on Distance Ratio $r$}
 \end{figure}
 
-For a vector whose components are drawn from a uniform distribution on $(0, 1)$, the $\mathcal{L}_{\infty}$ is bounded by 1, whereas a vector whose components are drawn from a normal distribution are unbounded, even when the vector is normalized.
-
+For a vector whose components are drawn from a uniform distribution on $(0, 1)$ or have been normalized, $\mathcal{L}_{\infty}$ is bounded above by 1.
+\paragraph{}
 Displayed below is the average variance of the $\mathcal{L}_{\infty}$ norms of 1000 vectors whose components are randomly drawn from uniform and normal distributions respectively, plotted against the arity of the vector.  The variance decreases to approximately 0 for the uniform distribution, while still remaining relatively high for the normal distribution:
 \begin{figure}[H]
 \centering

@@ -13,6 +13,7 @@
 \contentsline {subsection}{\numberline {3.1}Distance Ratio}{4}
 \contentsline {subsubsection}{\numberline {3.1.1}Uniform Distribution}{5}
 \contentsline {subsubsection}{\numberline {3.1.2}Normal Distribution}{7}
+\contentsline {paragraph}{}{10}
 \contentsline {subsection}{\numberline {3.2}Classification Accuracy}{12}
 \contentsline {paragraph}{}{12}
 \contentsline {paragraph}{}{12}
