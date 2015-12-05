@@ -18,9 +18,9 @@
 \contentsline {paragraph}{}{12}
 \contentsline {paragraph}{}{12}
 \contentsline {subsubsection}{\numberline {3.2.1}The Effect of Dimension on Accuracy}{13}
-\contentsline {subsubsection}{\numberline {3.2.2}The Effect of Sample Size on Accuracy}{14}
-\contentsline {subsubsection}{\numberline {3.2.3}The Effect of Perturbation Variance on Accuracy}{15}
-\contentsline {subsubsection}{\numberline {3.2.4}On the Number of Classes and Accuracy}{16}
-\contentsline {section}{\numberline {4}Conclusion}{16}
-\contentsline {paragraph}{}{16}
-\contentsline {paragraph}{}{17}
+\contentsline {subsubsection}{\numberline {3.2.2}The Effect of Sample Size on Accuracy}{15}
+\contentsline {subsubsection}{\numberline {3.2.3}The Effect of Perturbation Variance on Accuracy}{19}
+\contentsline {subsubsection}{\numberline {3.2.4}On the Number of Classes and Accuracy}{20}
+\contentsline {section}{\numberline {4}Conclusion}{21}
+\contentsline {paragraph}{}{21}
+\contentsline {paragraph}{}{21}

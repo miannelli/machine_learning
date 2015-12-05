@@ -2,13 +2,14 @@ import point
 from helpertools import Metric, Xi
 import random
 import tablemaker
+from numpy import inf
 from copy import deepcopy
 from confusionmatrix import ConfusionMatrix
 
 trials = 10 # Amount of trials
 N_Values = list(range(1, 11)) + list(range(20, 101, 10))  # The dimension of space
 K_Values = [k for k in range(10, 301, 10)]  # The number of point values
-metrics = [Metric(ord) for ord in [2]]  # Different norms to use
+metrics = [Metric(ord) for ord in [1,2,inf]]  # Different norms to use
 distribution = (lambda: random.uniform(0, 1))  # Point Distribution
 xis = [Xi((lambda: random.gauss(0, sigma)), sigma) for sigma in [.05, .1, .15, .2, .25]]
 M = 100
