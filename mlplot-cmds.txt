@@ -20,6 +20,9 @@ mlplot.aggr_scatter_plot_file('experiment1-2-varsigma-lower_k-metric_1','sigma',
 mlplot.aggr_scatter_plot_file('experiment1-2-varsigma-lower_k-metric_1','sigma','Accuracy',['K','N','Metric'],[300,100,'1'],linreg=True,save=True)
 mlplot.aggr_scatter_plot_file('experiment1-2-varsigma-lower_k-metric_inf','sigma','Accuracy',['K','N','Metric'],[100,100,'inf'],linreg=True,save=True)
 mlplot.aggr_scatter_plot_file('experiment1-2-varsigma-lower_k-metric_inf','sigma','Accuracy',['K','N','Metric'],[300,100,'inf'],linreg=True,save=True)
+mlplot.aggr_scatter_plot_file('experiment1-2-varsigma-high_m-metric_1','sigma','Accuracy',['K','N','Metric'],[5000,100,'1'],linreg=True,save=True)
+mlplot.aggr_scatter_plot_file('experiment1-2-varsigma-high_m-metric_2','sigma','Accuracy',['K','N','Metric'],[5000,100,'2'],linreg=True,save=True)
+mlplot.aggr_scatter_plot_file('experiment1-2-varsigma-high_m-metric_inf','sigma','Accuracy',['K','N','Metric'],[5000,100,'inf'],linreg=True,save=True)
 
 mlplot.aggr_bar_plot_file('l-experiment2(2)','N','Mean','Metric',['K'],[50],error='StandardDeviation',save=True)
 mlplot.aggr_bar_plot_file('l-experiment2(2)','N','Mean','Metric',['K'],[500],error='StandardDeviation',save=True)
